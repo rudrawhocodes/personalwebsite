@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudra Thacker Resume Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom,#000000,#080b99 );
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #ffffff;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            animation: fadeIn 2s;
+        }
+        .hero p {
+            font-size: 18px;
+            font-weight: 400;
+            animation: fadeIn 2s 0.5s;
+        }
+        .hero button {
+            animation: fadeIn 2s 1s;
+            background-color: #2f4f7f;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 5px;
+            transition: all 0.5s;
+            color: #ffffff;
+        }
+        .hero button:hover {
+            background-color: #1a2b3d;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .skills {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+        }
+        .skills h2 {
+            color: #080b99;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills li {
+            animation: fadeIn 1s;
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 18px;
+        }
+        .education {
+            background-color: #f7f7f7;
+            padding: 50px 20px;
+        }
+        .education h2 {
+            color: #080b99;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 2px;
+            height: 100%;
+            background-color: #080b99;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #080b99;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 10px;
+            height: 10px;
+            background-color: #080b99db;
+            border-radius: 50%;
+        }
+        .timeline-item-last {
+            border-bottom: none;
+        }
+        .timeline-content {
+            margin-left: 60px;
+        }
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .timeline-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+        }
+        .projects {
+            background-color: #ffffff;
+            padding: 50px 20px;
+        }
+        .projects h2 {
+            color: #080b99;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .project-card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: all 0.5s;
+            animation: fadeIn 1s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        .project-card h5 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        .project-card button {
+            background-color: #f1c40f;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 5px;
+            transition: all 0.5s;
+        }
+        .project-card button:hover {
+            background-color: #e67e73;
+        }
+        .soft-skills {
+            background-color: #f7f7f7;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .soft-skills h2 {
+            color: #080b99;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .soft-skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .soft-skills li {
+            animation: fadeIn 1s;
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 18px;
+        }
+        .contact {
+            background-color: #ffffff;
+            padding: 50px 20px;
+        }
+        .contact h2 {
+            color: #080b99;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .contact form {
+            animation: fadeIn 1s;
+        }
+        .navbar {
+            background-color:#080b99;
+        }
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .nav-link {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .modal-content {
+            background-color: #080b99;
+            color: #ffffff;
+        }
+        .modal-header {
+            border-bottom: 1px solid #ffffff;
+        }
+        .modal-footer {
+            border-top: 1px solid #ffffff;
+        }
+        .btn {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .btn:hover {
+            background-color: #ffffff;
+            color: #3498db;
+        }
+        footer {
+            background-color: #080b99;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Rudra Thacker Resume Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#soft-skills">Soft Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero" id="hero">
+        <h1>Rudra Thacker</h1>
+        <p>
+            Hello, my name is Rudra Thacker and I am a driven 17-year-old currently in my final year of higher Secondary school<br>
+             class 12 with a focus on science and mathematics. As a tech enthusiast <br> 
+             I have spent countless hours exploring the world of coding and have developed a strong proficiency in Java, Python, and JavaScript. <br>
+             My passion for technology and programming has been ingrained in me since a young age <br> 
+             and I am constantly seeking out new challenges and opportunities to expand my knowledge and skills in this ever-evolving field.</p>
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#aboutModal">Learn More</button>
+    </section>
+    <section class="skills" id="skills" data-aos="fade-left">
+        <h2>Skills</h2>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Java</li>
+            <li><i class="fas fa-check-circle"></i> Python</li>
+            <li><i class="fas fa-check-circle"></i> C++</li>
+            <li><i class="fas fa-check-circle"></i> HTML/CSS/JavaScript</li>
+            <li><i class="fas fa-check-circle"></i> Data Structure and Algorithms</li>
+            <li><i class="fas fa-check-circle"></i> gaining more skills soon </li>
+        </ul>
+    </section>
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-title">Bachelor of Technology in Computer Science and Engineering</span>
+                    <span class="timeline-subtitle">20xx-20xx, XYZ University</span>
+                
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-title">Senior Secondary School </span>
+                    <span class="timeline-subtitle">2023-2025, THE H.B.KAPADIA HIGH SCHOOL,AHMEDABAD</span>
+                    <p>Subjects: Physics, Chemistry, Mathematics, and Computer Science</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projects" id="projects" data-aos="fade-right">
+        <h2>Projects</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <h5>Project 1: To-Do List App</h5>
+                    <p>A simple To-Do List App built with HTML, CSS, and JavaScript.</p>
+                    <a href="https://github.com/rudrathacker/todo-list-app" target="_blank" class="btn">View on GitHub</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <h5>Project 2: Weather Forecast App</h5>
+                    <p>A simple Weather Forecast App built with Python and the OpenWeatherMap API.</p>
+                    <a href="https://github.com/rudrathacker/weather-forecast-app" target="_blank" class="btn">View on GitHub</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <h5>Project 3: Personal Website</h5>
+                    <p>A personal website built with HTML, CSS, and JavaScript.</p>
+                    <a href="https://github.com/rudrathacker/personal-website" target="_blank" class="btn">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="soft-skills" id="soft-skills" data-aos="fade-left">
+        <h2>Soft Skills</h2>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Communication</li>
+            <li><i class="fas fa-check-circle"></i> Teamwork</li>
+            <li><i class="fas fa-check-circle"></i> Critical Thinking</li>
+            <li><i class="fas fa-check-circle"></i> Problem-Solving</li>
+            <li><i class="fas fa-check-circle"></i> Deadline-Oriented</li>
+        </ul>
+    </section>
+    <section class="contact" id="contact" data-aos="fade-right">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea class="form-control" id="message" required></textarea>
+            </div>
+            <button class="btn" type="submit">Send</button>
+        </form>
+        <div id="contact-form-response" style="display: none; color: green;"></div>
+    </section>
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">About Me</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>I am Rudra Thacker, a software developer with experience in Java, Python, C++, and HTML/CSS/JavaScript.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+            fetch('/contact', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('contact-form-response').style.display = 'block';
+                document.getElementById('contact-form-response').innerText = 'Message sent successfully!';
+                document.getElementById('contact-form').reset();
+            })
+            .catch(error => {
+                document.getElementById('contact-form-response').style.display = 'block';
+                document.getElementById('contact-form-response').style.color = 'red';
+                document.getElementById('contact-form-response').innerText = 'Error sending message. Please try again later.';
+            });
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Rudra Thacker Resume Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
